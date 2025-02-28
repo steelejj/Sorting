@@ -1,7 +1,7 @@
 COMMAND=$1
 
 if [ "$COMMAND" = "--interactive" ]; then
-    docker run -it --rm -v "$(pwd)/app:/app" sorting /bin/bash
+    docker run -it --rm -v "$(pwd):/app" sorting /bin/bash
 elif [ "$COMMAND" = "--test" ]; then
     docker run --rm -v $(pwd):/app -w /app sorting pytest tests/
 else
